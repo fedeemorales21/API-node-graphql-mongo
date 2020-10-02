@@ -1,5 +1,7 @@
 import { config } from 'dotenv'
-config()
+if (process.env.NODE_ENV !== 'production') {
+  config()
+}
 
 import express from 'express'
 import { graphqlHTTP } from 'express-graphql'
